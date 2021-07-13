@@ -1,0 +1,3 @@
+parameters:
+    rights:
+        homepage_default: 'public'
