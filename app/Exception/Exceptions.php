@@ -19,3 +19,23 @@ class UserServiceException extends Exception
 {
 
 }
+
+class TweetServiceException extends Exception
+{
+
+}
+
+class TweetManagerException extends Exception
+{
+
+}
+
+class UserManagerException extends Exception
+{
+
+}
+
+class ApiException extends Exception
+{
+
+}

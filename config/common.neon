@@ -5,6 +5,7 @@ application:
 	errorPresenter: Error
 	mapping:
 		*: App\*Module\Presenters\*Presenter
+	debugger: true
 
 
 session:

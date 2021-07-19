@@ -18,7 +18,7 @@ class UserService implements UserInterface
 {
 
     /** @var UserManager */
-    private UserManager $userManager;
+    private $userManager;
 
     /**
      * UserService constructor

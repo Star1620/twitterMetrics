@@ -43,55 +43,55 @@ class UserEntity
      * @ORM\Column (type="integer", nullable=false)
      * @ORM\GeneratedValue
      */
-    private int $id;
+    private $id;
 
     /**
      * @var string
      * @ORM\Column (type="string", length=60, nullable=false)
      */
-    private string $name;
+    private $name;
 
     /**
      * @var string
      * @ORM\Column (type="string", length=60, nullable=false)
      */
-    private string $email;
+    private $email;
 
     /**
      * @var int
      * @ORM\Column (type="integer", length=1, options={"default":1})
      */
-    private int $state;
+    private $state;
 
     /**
      * @var int
      * @ORM\Column (type="integer", length=1, options={"default":0})
      */
-    private int $admin;
+    private $admin;
 
     /**
      * @var datetime
      * @ORM\Column (type="datetime", nullable=true, options={"default":"CURRENT_TIMESTAMP"})
      */
-    private datetime $created;
+    private $created;
 
     /**
      * @var datetime
      * @ORM\Column (type="datetime", nullable=true, options={"default":"CURRENT_TIMESTAMP"})
      */
-    private datetime $updated;
+    private $updated;
 
     /**
      * @var string
      * @ORM\Column (type="string", length=60, nullable=false)
      */
-    private string $createdBy;
+    private $createdBy;
 
     /**
      * @var string
      * @ORM\Column (type="string", length=60, nullable=false)
      */
-    private string $updatedBy;
+    private $updatedBy;
 
     /**
      * @return int

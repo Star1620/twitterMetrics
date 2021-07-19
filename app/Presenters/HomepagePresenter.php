@@ -9,8 +9,17 @@ declare(strict_types=1);
 namespace App\Presenters;
 
 use Nette;
-
+use Nette\Http;
+$search = "pilulka";
 
 final class HomepagePresenter extends Nette\Application\UI\Presenter
 {
+
+
+
+    public function actionDotaz($search)
+    {
+
+    }
+
 }

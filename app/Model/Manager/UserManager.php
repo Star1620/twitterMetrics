@@ -18,7 +18,7 @@ use Doctrine\ORM\EntityManager;
 class UserManager
 {
     /** @var EntityManager */
-    protected EntityManager $em;
+    protected $em;
 
     /**
      * @param string $name
