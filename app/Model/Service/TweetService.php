@@ -29,7 +29,6 @@ class TweetService implements TweetInterface
     public function __construct(
         TweetManager $tweetManager
     ) {
-        parent::__construct();
         $this->tweetManager = $tweetManager;
     }
 

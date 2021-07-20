@@ -10,11 +10,36 @@ namespace App\Presenters;
 
 use Nette;
 use Nette\Http;
-$search = "pilulka";
+use App\Api\TwitterApi;
+use App\Model\Manager\TweetManager;
 
-final class HomepagePresenter extends Nette\Application\UI\Presenter
+
+class HomepagePresenter extends Nette\Application\UI\Presenter
 {
 
+    /** @var TwitterApi */
+    private $apiData;
+
+    /** @var TweetManager */
+    private $tweetManager;
+
+    static protected $search = 'pilulka';
+
+    public function __construct(
+//        TwitterApi $apiData,
+        TweetManager $tweetManager
+    )
+    {
+//        $this->apiData = $apiData;
+        $this->tweetManager = $tweetManager;
+    }
+
+    public function renderDefault()
+    {
+        $this->template->data = json_decode($this->tweetManager->findTweet("pilulka"));
+//        $this->template->data = 'Test';
+//        $this->template->render();
+    }
 
 
     public function actionDotaz($search)

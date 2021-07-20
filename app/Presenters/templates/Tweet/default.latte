@@ -1,0 +1,17 @@
+{block content}
+    <div class="row">
+        <div class="col-md-12">
+            <div class="col-md-12">
+                {*{if $user->isAllowed() === TRUE} *}
+                <a n:href="Search!">
+                        <button type="button" class="btn btn-success"
+                                data-widget="remove">{_'add'}</button>
+                </a>
+                {* {/if} *}
+            </div>
+            <br>
+            <br>
+            {control tweetGrid}
+        </div>
+    </div>
+{/block}

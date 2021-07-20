@@ -1,6 +1,5 @@
 parameters:
 
-
 application:
 	errorPresenter: Error
 	mapping:
@@ -17,6 +16,11 @@ di:
 		parameters: no
 		tags: no
 
-
 services:
 	- App\Router\RouterFactory::createRouter
+	- App\Component\Grid\Tweet\TweetGridFactory
+	- App\Component\Form\Tweet\TweetFormFactory
+	- App\Model\Manager\TweetManager
+	- App\Model\Service\TweetService
+	- App\Api\TwitterApi({defaultApi: 'Bearer AAAAAAAAAAAAAAAAAAAAAIZwRgEAAAAAMlvg40aMveLjUXvcIhU3Gc%%2FyQrc%3DlWoVEJBj1OHXV6AYiHlUcwiC7ZtKSurnxyMkaKmAvj8F2kVRJa'})
+	#- App\Config\Config({defaultApi: 'Bearer AAAAAAAAAAAAAAAAAAAAAIZwRgEAAAAAMlvg40aMveLjUXvcIhU3Gc%%2FyQrc%3DlWoVEJBj1OHXV6AYiHlUcwiC7ZtKSurnxyMkaKmAvj8F2kVRJa'})

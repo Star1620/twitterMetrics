@@ -10,6 +10,7 @@ extensions:
 #    nettrine.dbal: Nettrine\DBAL\DI\DbalExtension
 #    nettrine.dbal.console: Nettrine\DBAL\DI\DbalConsoleExtension(%consoleMode%)
 #    nettrine.cache: Nettrine\Cache\DI\CacheExtension
+    translation: Contributte\Translation\DI\TranslationExtension
 
 doctrine.orm.annotations:
     mapping:

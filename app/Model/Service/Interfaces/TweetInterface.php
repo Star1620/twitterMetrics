@@ -9,7 +9,6 @@ declare(strict_types=1);
 namespace App\Model\Service\Interfaces;
 
 use App\Model\Entity\TweetEntity;
-use App\Exception\TweetServiceException;
 use Nette\Utils\DateTime;
 
 /**

@@ -14,6 +14,7 @@ use App\Model\Manager\TweetManager;
 use App\Model\Service\Interfaces\TweetInterface;
 use Nette\Application\AbortException;
 use Nette\Application\UI\Form;
+use Nette\Application\UI\TemplateFactory;
 use Nette\ComponentModel\Component;
 use Nette\Forms\FormFactory;
 use Nette\Application\UI\Presenter;
@@ -35,6 +36,9 @@ class TweetForm extends Presenter
     /** @var int|null $tweetId */
     private $tweetId;
 
+    /** @var TemplateFactory */
+    private $templateFactory;
+
     private mixed $formFactory;
 
     /**
@@ -49,7 +53,8 @@ class TweetForm extends Presenter
         int|null $tweetId,
         FormFactory $formFactory,
         TweetManager $tweetManager,
-        TweetInterface $tweetInterface
+        TweetInterface $tweetInterface,
+        TemplateFactory $templateFactory
     ) {
         parent::__construct($formFactory);
         $this->tweetId = intval($tweetId);
@@ -60,7 +65,7 @@ class TweetForm extends Presenter
     /** Render search. */
     public function renderSearchTweet()
     {
-        $this->setTemplateFactory('searchTweet');
+        $this->setTemplateFactory(TemplateFactory::class );
         $this->template->render();
     }
 
