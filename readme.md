@@ -19,7 +19,7 @@ The best way to install this Web Project is using GIT and Composer.
    Download it from official site https://www.apachefriends.org/index.html and install.
    
 2. After installation, you can run Apache and PHP by XAMPP or by NETTE build-in server. 
-If you want to run Appache and PHP by XAMPP, default www.localhost folder for your applications is xampp/htdocs/.  Then run XAMPP Control. 
+If you want to run Apache and PHP by XAMPP, default www.localhost folder for your applications is xampp/htdocs/. Run XAMPP Control. 
 If you want to use NETTE build-in PHP server follow Web Server Setup bellow.
 
 
@@ -29,20 +29,19 @@ In Git Bash terminal (if you will use XAMPP PHP server do it in folder xampp/htd
 	git clone https://github.com/Star1620/twitterMetrics.git
 
 It will clone application to directory "twitterMetrics". 
-Inside this directory make directories `temp/` and `log/` writable.
+Inside this directory should be directories `temp/` and `log/` writable. If not, make them. Then rename directory "config_prod" to "config".
+In configuration file "common.neon" add your Twitter Bearer token generated in development Twitter site - see bellow.
 
-2. Make a development account on [Twitter development portal](https://developer.twitter.com/)
+4. Bearer token: Make a development account on [Twitter development portal](https://developer.twitter.com/)
    On this website you need to create account and new project. Then generate your project Bearer Token. Insert generated token to configuration file 'Common.neon'.
 
-3. 
-4. Install Composer - if you don't have Composer yet,download it following [the instructions](https://getcomposer.org/).
-Then inside application folder (twittermetrics) run command:
+5. Composer - if you don't have Composer yet, download it following [the instructions](https://getcomposer.org/).
+Then inside application folder (twittermetrics) run command in terminal:
 
 	composer update
 
 
-
-Web Server Setup
+Web Server Setup - by NETTE
 ----------------
 
 The simplest way to get started is to start the built-in PHP server in the root directory of your project:
@@ -56,3 +55,10 @@ should be ready to go.
 
 **It is CRITICAL that whole `app/`, `config/`, `log/` and `temp/` directories are not accessible directly
 via a web browser. See [security warning](https://nette.org/security-warning).**
+
+
+Web Server Setup - by XAMPP
+----------------
+
+Application should be in folder 'xampp/htdocs/twittermetrics/' . Run XAMPP control and Start Apache.
+In your browser open page 'localhost/twittermatics/'.
