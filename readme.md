@@ -21,11 +21,16 @@ Then in Git terminal use commands :
 
 It will clone application to directory "twitterMetrics". Inside this directory make directories `temp/` and `log/` writable.
 
-If you don't have Composer yet,download it following [the instructions](https://doc.nette.org/composer). 
+If you don't have Composer yet,download it following [the instructions](https://getcomposer.org/). 
 Then inside twittermetrics folder run command:
 
 	composer update
 
+Installation - localhost (on your computer)
+------------
+
+The same as Instalation above, only you need also PHP server on your local computer. One of the common used app is [XAMPP](https://www.apachefriends.org/index.html)
+Download it from official site https://www.apachefriends.org/index.html and install.
 
 Web Server Setup
 ----------------
