@@ -42,13 +42,14 @@ class TwitterApi
     /**
      * @throws ApiException
      */
-    public function connectTwitter(string $search, int $number) {
+    public function connectTwitter(string $search, int $number): bool|string
+    {
         try{
             $curl = curl_init();
             $header = array('Authorization: '. Neon::decode($this->defaultApi['defaultApi']));
 //            $header = array('Authorization: '.$this->config );
             curl_setopt_array($curl, array(
-                CURLOPT_URL => 'https://api.twitter.com/2/tweets/search/recent?query='.$search.'&tweet.fields=author_id,created_at,entities,geo,in_reply_to_user_id,lang,possibly_sensitive,referenced_tweets,source',
+                CURLOPT_URL => 'https://api.twitter.com/2/tweets/search/recent?max_results=100&query='.$search.'&tweet.fields=author_id,created_at,entities,geo,in_reply_to_user_id,lang,possibly_sensitive,referenced_tweets,source',
                 CURLOPT_RETURNTRANSFER => true,
                 CURLOPT_ENCODING => '',
                 CURLOPT_MAXREDIRS => 20,

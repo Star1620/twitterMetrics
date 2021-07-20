@@ -12,6 +12,7 @@ use Nette;
 use Nette\Http;
 use App\Api\TwitterApi;
 use App\Model\Manager\TweetManager;
+use Tracy\Debugger;
 
 
 class HomepagePresenter extends Nette\Application\UI\Presenter
@@ -36,7 +37,9 @@ class HomepagePresenter extends Nette\Application\UI\Presenter
 
     public function renderDefault()
     {
+
         $this->template->data = json_decode($this->tweetManager->findTweet("pilulka"));
+        Debugger::barDump($this->template->data, 'Template Data');
 //        $this->template->data = 'Test';
 //        $this->template->render();
     }
