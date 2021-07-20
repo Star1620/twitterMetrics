@@ -1,0 +1,18 @@
+parameters:
+
+doctrine.dbal:
+    debug:
+        panel: %debugMode%
+    connection:
+        driver: pdo_mysql
+        host: localhost
+        user: root
+        password: ''
+        dbname: twitter
+        metadata: %appDir%/Model/Entity
+
+
+
+includes:
+    - rights.neon
+    - doctrine.neon
