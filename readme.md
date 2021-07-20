@@ -7,30 +7,30 @@ This is a simple application using the [Nette](https://nette.org) and some packa
 Requirements
 ------------
 
-- Web Project for Nette 3.1 requires PHP 7.2
+- Web Project for Nette 3.1, requires PHP 8.0, Git, Composer
 
 
 Installation
 ------------
 
 The best way to install this Web Project is using GIT and Composer. 
-If you don't have GIT yet, download it from [the instructions](https://git-scm.com/downloads). 
+
+1. Install Git: If you don't have GIT yet, download it from [the instructions](https://git-scm.com/downloads). 
 Then in Git terminal use commands : 
 
 	git clone https://github.com/Star1620/twitterMetrics.git
 
 It will clone application to directory "twitterMetrics". Inside this directory make directories `temp/` and `log/` writable.
 
-If you don't have Composer yet,download it following [the instructions](https://getcomposer.org/). 
+2. Install PHP - for usage as localhost (on your computer)
+
+To run Application on your computer, you need PHP server. One of the common used tool is [XAMPP](https://www.apachefriends.org/index.html)
+Download it from official site https://www.apachefriends.org/index.html and install.
+
+3. Install Composer - if you don't have Composer yet,download it following [the instructions](https://getcomposer.org/).
 Then inside twittermetrics folder run command:
 
 	composer update
-
-Installation - localhost (on your computer)
-------------
-
-The same as Instalation above, only you need also PHP server on your local computer. One of the common used app is [XAMPP](https://www.apachefriends.org/index.html)
-Download it from official site https://www.apachefriends.org/index.html and install.
 
 Web Server Setup
 ----------------

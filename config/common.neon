@@ -22,5 +22,4 @@ services:
 	- App\Component\Form\Tweet\TweetFormFactory
 	- App\Model\Manager\TweetManager
 	- App\Model\Service\TweetService
-	- App\Api\TwitterApi({defaultApi: 'Bearer AAAAAAAAAAAAAAAAAAAAAIZwRgEAAAAAMlvg40aMveLjUXvcIhU3Gc%%2FyQrc%3DlWoVEJBj1OHXV6AYiHlUcwiC7ZtKSurnxyMkaKmAvj8F2kVRJa'})
-	#- App\Config\Config({defaultApi: 'Bearer AAAAAAAAAAAAAAAAAAAAAIZwRgEAAAAAMlvg40aMveLjUXvcIhU3Gc%%2FyQrc%3DlWoVEJBj1OHXV6AYiHlUcwiC7ZtKSurnxyMkaKmAvj8F2kVRJa'})
+	- App\Api\TwitterApi({defaultApi: 'Bearer '}) # here insert your Bearer Twitter API KEY. You can ganerate it on official Twitter website:  https://developer.twitter.com in format 'Baerer XXXXXXXXX'
