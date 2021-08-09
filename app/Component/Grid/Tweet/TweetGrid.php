@@ -9,47 +9,45 @@ declare(strict_types=1);
 namespace App\Component\Grid\Tweet;
 
 use App\Model\Manager\TweetManager;
-use Nette\Application\UI\Presenter;
-use Nette\Application\UI\Template as Template;
+use Nette\Application\UI\Control;
 use Nette\Application\UI\TemplateFactory;
 use Contributte\Translation\Translator;
+use Tracy\Debugger;
 
-class TweetGrid extends Presenter
+class TweetGrid extends Control
 {
-    /** @var TweetManager */
-    private $tweetManager;
-
-    /** @var TemplateFactory */
-    private $templateFactory;
 
     /** @var Translator */
     private $translator;
 
+    /** @var TweetGridFactory */
+    public TweetGridFactory $tweetGridFactory;
+
+    /** @var TweetManager */
+    private TweetManager $tweetManager;
+
     public function __construct(
         TweetManager $tweetManager,
         Translator $translator,
-        TemplateFactory $templateFactory
+        TweetGridFactory $tweetGridFactory
     ) {
-        parent::__construct();
         $this->tweetManager = $tweetManager;
         $this->translator = $translator;
-        $this->templateFactory = $templateFactory;
+        $this->tweetGridFactory = $tweetGridFactory;
 }
 
     /** Render */
-    public function render(): void
+    public function render()
     {
-//    $this->setTemplateFactory($this->templateFactory);
-//    $this->template->setFile('tweetGrid.latte');
-//    $this->template->setTranslator($this->translator);
-//    $this->template->render();
+        $this->template->setFile("../App/Component/Grid/Tweet/Template/tweetGrid.latte");
+        $this->template->data = json_decode($this->tweetManager->findTweet("pilulka"));
+        $this->template->render();
     }
 
 
     protected function createComponentTweetGrid()
     {
-
-
+        $this->tweetGridFactory->create();
+        $this->template->data = json_decode($this->tweetManager->findTweet("pilulka"));
     }
-
 }

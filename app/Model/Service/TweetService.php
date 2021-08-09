@@ -10,7 +10,6 @@ namespace App\Model\Service;
 
 use App\Exception\TweetServiceException;
 use App\Model\Entity\TweetEntity;
-use App\Model\Entity\UserEntity;
 use App\Model\Manager\TweetManager;
 use App\Model\Service\Interfaces\TweetInterface;
 use Nette\Utils\DateTime;

@@ -8,7 +8,6 @@ declare(strict_types=1);
 
 namespace App\Api;
 
-use App\Config\Config;
 use App\Exception\ApiException;
 use Nette\Neon\Neon;
 use Nette\PhpGenerator\Property;
