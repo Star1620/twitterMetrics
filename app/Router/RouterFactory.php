@@ -16,7 +16,7 @@ final class RouterFactory
 	{
 		$router = new RouteList;
 		$router->addRoute('twitter/<action>[/<endpoint>]', 'Twitter:connect');
-		$router->addRoute('<presenter>/<action>[/<id>]', 'Homepage:default');
+		$router->addRoute('<presenter>/<action>[/<id>]', 'Tweet:default');
 		return $router;
 	}
 }

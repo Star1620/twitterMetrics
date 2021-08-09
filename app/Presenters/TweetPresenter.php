@@ -8,64 +8,62 @@ declare(strict_types=1);
 
 namespace App\Presenters;
 
-use App\Component\Form\Tweet\TweetForm;
-use App\Component\Form\Tweet\TweetFormFactory;
 use App\Component\Grid\Tweet\TweetGrid;
 use App\Component\Grid\Tweet\TweetGridFactory;
 use Nette;
 use Nette\Http;
-use GuzzleHttp\Client;
+use App\Api\TwitterApi;
+use App\Model\Manager\TweetManager;
+use Tracy\Debugger;
 
-/**
- * Class TweetPresenter
- * @package Presenters
- */
 class TweetPresenter extends Nette\Application\UI\Presenter
 {
 
-    /** @var Client */
-    private $client;
+    /** @var TwitterApi */
+    private $apiData;
+
+    /** @var TweetManager */
+    private $tweetManager;
+
+    static protected $search = 'pilulka';
 
     /** @var TweetGridFactory */
     public TweetGridFactory $tweetGridFactory;
 
-    /** @var TweetFormFactory */
-    private TweetFormFactory $tweetFormFactory;
 
 
-    /**
-     * @param TweetGridFactory $tweetGridFactory
-     * @param TweetFormFactory $tweetFormFactory
-     */
-    public function injectDependencies(
-        TweetGridFactory $tweetGridFactory,
-        TweetFormFactory $tweetFormFactory
-    ) {
+    public function __construct(
+//        TwitterApi $apiData,
+        TweetManager $tweetManager,
+        TweetGridFactory $tweetGridFactory
+    )
+    {
+//        $this->apiData = $apiData;
+        $this->tweetManager = $tweetManager;
         $this->tweetGridFactory = $tweetGridFactory;
-        $this->tweetFormFactory = $tweetFormFactory;
     }
 
+    public function renderDefault()
+    {
+
+//        $this->template->data = json_decode($this->tweetManager->findTweet("pilulka"));
+//        Debugger::barDump($this->template->data, 'Template Data');
+
+        //        $this->template->data = 'Test';
+//        $this->template->render();
+    }
 
     /**
      * @return TweetGrid
      */
-    protected function createComponentTweetGrid(): TweetGrid
+    public function createComponentTweetGrid(): TweetGrid
     {
         return $this->tweetGridFactory->create();
     }
 
-    /**
-     * @return TweetForm
-     */
-    protected function createComponentTweetForm(): TweetForm
+    public function actionDotaz($search)
     {
-        return $this->tweetFormFactory->create();
+        // TODO
     }
-
-    public function handleSearch()
-    {
-
-    }
-
 
 }
