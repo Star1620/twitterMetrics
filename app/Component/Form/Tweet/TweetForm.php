@@ -28,36 +28,36 @@ class TweetForm extends Presenter
 {
 
     /** @var TweetManager */
-    private TweetManager $tweetManager;
+    private $tweetManager;
 
     /** @var TweetInterface */
     private $tweetInterface;
 
-    /** @var int|null $tweetId */
+    /** @var int $tweetId */
     private $tweetId;
 
     /** @var TemplateFactory */
     private $templateFactory;
 
-    private mixed $formFactory;
+    private $formFactory;
 
     /**
      * TweetForm constructor.
      *
-     * @param int|null              $tweetId
+     * @param int                   $tweetId
      * @param FormFactory           $formFactory
      * @param TweetManager          $tweetManager
      * @param TweetInterface        $tweetInterface
      */
     public function __construct(
-        int|null $tweetId,
+        int $tweetId,
         FormFactory $formFactory,
         TweetManager $tweetManager,
         TweetInterface $tweetInterface,
         TemplateFactory $templateFactory
     ) {
         parent::__construct($formFactory);
-        $this->tweetId = intval($tweetId);
+        $this->tweetId = $tweetId;
         $this->tweetManager = $tweetManager;
         $this->tweetInterface = $tweetInterface;
     }

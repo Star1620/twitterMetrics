@@ -21,10 +21,10 @@ class TweetGrid extends Control
     private $translator;
 
     /** @var TweetGridFactory */
-    public TweetGridFactory $tweetGridFactory;
+    public $tweetGridFactory;
 
     /** @var TweetManager */
-    private TweetManager $tweetManager;
+    private $tweetManager;
 
     public function __construct(
         TweetManager $tweetManager,

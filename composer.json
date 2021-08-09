@@ -22,10 +22,13 @@
 		"tracy/tracy": "^2.8",
 		"nettrine/dbal": "^0.7.0",
 		"nettrine/orm": "^0.8.1",
+		"nettrine/annotations": "^v0.7.0",
+		"nettrine/migrations": "^v0.7.1",
 		"nettrine/cache": "^0.3.0",
 		"contributte/console": "^0.9.0",
 		"contributte/application": "^v0.5.1",
 		"doctrine/orm": "^2.9.x-dev",
+		"doctrine/common": "^3.1.2",
 		"ublaboo/datagrid": ">=v6.8.1",
 		"contributte/translation": "v0.9.0",
     "ext-curl": "*"

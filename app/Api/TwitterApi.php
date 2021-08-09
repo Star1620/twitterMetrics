@@ -41,7 +41,7 @@ class TwitterApi
     /**
      * @throws ApiException
      */
-    public function connectTwitter(string $search, int $number): bool|string
+    public function connectTwitter(string $search, int $number): string
     {
         try{
             $curl = curl_init();

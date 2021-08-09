@@ -24,20 +24,14 @@ use App\Api\TwitterApi;
  */
 class TweetManager
 {
-    /** @var TwitterApi */
-    private TwitterApi $twitterApi;
 
-    /** @var EntityManagerDecorator */
-    private EntityManagerDecorator $em;
+    private $entity;
 
-//    /** @var EntityRepository */
-//    private EntityRepository $repository;
+    private $criteria = null;
 
-    /** @var string */
-    private string $entity;
+    private $twitterApi;
 
-    /** @var string|null */
-    private ?string $criteria = null;
+    private $em;
 
     public function __construct(
         EntityManagerDecorator $em,

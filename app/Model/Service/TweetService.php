@@ -18,7 +18,7 @@ class TweetService implements TweetInterface
 {
 
     /** @var TweetManager */
-    private TweetManager $tweetManager;
+    private $tweetManager;
 
     /**
      * TweetManager Constructor.
