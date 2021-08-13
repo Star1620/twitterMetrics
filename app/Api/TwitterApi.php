@@ -9,11 +9,8 @@ declare(strict_types=1);
 namespace App\Api;
 
 use App\Exception\ApiException;
+use Exception;
 use Nette\Neon\Neon;
-use Nette\PhpGenerator\Property;
-use Tracy\Debugger;
-use Nette\SmartObject;
-
 
 /**
  * Class TwitterApi
@@ -23,13 +20,7 @@ use Nette\SmartObject;
 class TwitterApi
 {
     /** @property TwitterApi  */
-    private $defaultApi;
-
-    protected function getDefaultApi()
-    {
-        return $this->defaultApi;
-    }
-
+    private array $defaultApi;
 
     public function __construct(
         array $defaultApi
@@ -41,12 +32,11 @@ class TwitterApi
     /**
      * @throws ApiException
      */
-    public function connectTwitter(string $search, int $number): string
+    public function connectTwitter(string $search): string
     {
         try{
             $curl = curl_init();
             $header = array('Authorization: '. Neon::decode($this->defaultApi['defaultApi']));
-//            $header = array('Authorization: '.$this->config );
             curl_setopt_array($curl, array(
                 CURLOPT_URL => 'https://api.twitter.com/2/tweets/search/recent?max_results=100&query='.$search.'&tweet.fields=author_id,created_at,entities,geo,in_reply_to_user_id,lang,possibly_sensitive,referenced_tweets,source',
                 CURLOPT_RETURNTRANSFER => true,
@@ -65,13 +55,8 @@ class TwitterApi
 
             return($response);
 
-        } catch(\App\Exception $e) {
+        } catch(Exception $e) {
             throw new ApiException($e->getMessage(), 0, $e);
-        };
-
+        }
     }
-
-
-
-
 }

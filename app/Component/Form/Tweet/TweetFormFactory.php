@@ -15,8 +15,7 @@ namespace App\Component\Form\Tweet;
 interface TweetFormFactory
 {
     /**
-     * @param int $tweetId
      * @return TweetForm
      */
-    public function create(int $tweetId): TweetForm;
+    public function create(): TweetForm;
 }
